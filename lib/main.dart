@@ -40,25 +40,38 @@ class Home extends StatelessWidget {
             appBar: AppBar(
               centerTitle: false,
               actions: [
-                PopupMenuButton(onSelected: (value) {
-                  switch (value) {
-                    case 0:
-                      break;
-                    default:
-                  }
-                }, itemBuilder: ((context) {
-                  return const [
-                    PopupMenuItem(
-                      value: 0,
-                      child: Text("New group"),
-                    ),
-                    PopupMenuItem(value: 1, child: Text("New broadcast")),
-                    PopupMenuItem(value: 2, child: Text("Linked devices")),
-                    PopupMenuItem(value: 3, child: Text("Starred messages")),
-                    PopupMenuItem(value: 4, child: Text("Payments")),
-                    PopupMenuItem(value: 5, child: Text("Settings")),
-                  ];
-                }))
+                const Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Icon(Icons.camera_alt_outlined),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Icon(Icons.search),
+                ),
+                PopupMenuButton(
+                    icon: const Icon(Icons.more_vert_outlined),
+                    onSelected: (value) {
+                      switch (value) {
+                        case 5:
+                          Navigator.pushNamed(context, "/settings");
+                          break;
+                        default:
+                      }
+                    },
+                    itemBuilder: ((context) {
+                      return const [
+                        PopupMenuItem(
+                          value: 0,
+                          child: Text("New group"),
+                        ),
+                        PopupMenuItem(value: 1, child: Text("New broadcast")),
+                        PopupMenuItem(value: 2, child: Text("Linked devices")),
+                        PopupMenuItem(
+                            value: 3, child: Text("Starred messages")),
+                        PopupMenuItem(value: 4, child: Text("Payments")),
+                        PopupMenuItem(value: 5, child: Text("Settings")),
+                      ];
+                    }))
               ],
               title: const Text(
                 "Edureka Chat",
