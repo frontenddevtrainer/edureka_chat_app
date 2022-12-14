@@ -4,6 +4,7 @@ import './calls/calls.dart';
 import './settings/settings.dart';
 import './status/status.dart';
 import './chat/chat.dart';
+import './messages/messages.dart';
 
 void main() {
   runApp(const App());
@@ -20,6 +21,7 @@ class App extends StatelessWidget {
       routes: {
         "/": (context) => const Home(),
         "/settings": (context) => const SettingScreen(),
+        "/chat": (context) => const Messages(),
       },
       theme: ThemeData(
           primaryColor: Colors.amberAccent,

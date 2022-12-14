@@ -14,6 +14,9 @@ class ChatWidget extends StatelessWidget {
                 color: Colors.black45,
               ),
               ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, "/chat");
+                },
                 leading: const CircleAvatar(
                   backgroundImage:
                       NetworkImage("https://picsum.photos/id/237/200/300"),
