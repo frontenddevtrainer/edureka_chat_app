@@ -1,6 +1,6 @@
+import './message_bubble.dart';
+import './mock_messages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Messages extends StatelessWidget {
   const Messages({super.key});
@@ -9,7 +9,14 @@ class Messages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Friend Name")),
-      body: const Text("hello"),
+      body: ListView.builder(
+          itemCount: MockMessages.length,
+          itemBuilder: ((context, index) {
+            return MessageBubble(
+              text: MockMessages[index]["message"] as String,
+              isMine: MockMessages[index]["isMine"] as bool,
+            );
+          })),
     );
   }
 }
