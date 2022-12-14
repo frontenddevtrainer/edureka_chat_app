@@ -38,7 +38,32 @@ class Home extends StatelessWidget {
         initialIndex: 0,
         child: Scaffold(
             appBar: AppBar(
-              title: const Text("Edureka Chat"),
+              centerTitle: false,
+              actions: [
+                PopupMenuButton(onSelected: (value) {
+                  switch (value) {
+                    case 0:
+                      break;
+                    default:
+                  }
+                }, itemBuilder: ((context) {
+                  return const [
+                    PopupMenuItem(
+                      value: 0,
+                      child: Text("New group"),
+                    ),
+                    PopupMenuItem(value: 1, child: Text("New broadcast")),
+                    PopupMenuItem(value: 2, child: Text("Linked devices")),
+                    PopupMenuItem(value: 3, child: Text("Starred messages")),
+                    PopupMenuItem(value: 4, child: Text("Payments")),
+                    PopupMenuItem(value: 5, child: Text("Settings")),
+                  ];
+                }))
+              ],
+              title: const Text(
+                "Edureka Chat",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
               bottom: const TabBar(tabs: [
                 Tab(
                   text: "Chat",
