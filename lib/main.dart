@@ -24,9 +24,28 @@ class ChatHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Edureka Chat")),
-      body: const Text("sfsf"),
-    );
+    return DefaultTabController(
+        length: 3,
+        initialIndex: 1,
+        child: Scaffold(
+            appBar: AppBar(
+              title: const Text("Edureka Chat"),
+              bottom: const TabBar(tabs: [
+                Tab(
+                  text: "Chat",
+                ),
+                Tab(
+                  text: "Status",
+                ),
+                Tab(
+                  text: "Calls",
+                )
+              ]),
+            ),
+            body: const TabBarView(children: [
+              Text("hello"),
+              Text("chat"),
+              Text("calls"),
+            ])));
   }
 }
