@@ -1,3 +1,4 @@
+import './chat/chat.dart';
 import "package:flutter/material.dart";
 
 void main() {
@@ -45,7 +46,7 @@ class ChatHome extends StatelessWidget {
             floatingActionButton:
                 const FloatingActionButton(onPressed: null, child: Text("+")),
             body: const TabBarView(children: [
-              Text("hello"),
+              ChatWidget(),
               Text("chat"),
               Text("calls"),
             ])));
