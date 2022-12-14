@@ -19,7 +19,7 @@ class App extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => const Home(),
-        "/settings": (context) => const Settings(),
+        "/settings": (context) => const SettingScreen(),
       },
       theme: ThemeData(
           primaryColor: Colors.amberAccent,
