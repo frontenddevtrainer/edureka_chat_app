@@ -1,8 +1,9 @@
-import 'package:edureka_chat_app/calls/calls.dart';
-import 'package:edureka_chat_app/status/status.dart';
-
-import './chat/chat.dart';
 import "package:flutter/material.dart";
+
+import './calls/calls.dart';
+import './settings/settings.dart';
+import './status/status.dart';
+import './chat/chat.dart';
 
 void main() {
   runApp(const App());
@@ -15,7 +16,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Edureka Chat",
-      home: const ChatHome(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const Home(),
+        "/settings": (context) => const Settings(),
+      },
       theme: ThemeData(
           primaryColor: Colors.amberAccent,
           appBarTheme: const AppBarTheme(color: Colors.orange)),
@@ -23,14 +28,14 @@ class App extends StatelessWidget {
   }
 }
 
-class ChatHome extends StatelessWidget {
-  const ChatHome({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
         length: 3,
-        initialIndex: 1,
+        initialIndex: 0,
         child: Scaffold(
             appBar: AppBar(
               title: const Text("Edureka Chat"),
