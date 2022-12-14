@@ -1,3 +1,6 @@
+import 'package:edureka_chat_app/calls/calls.dart';
+import 'package:edureka_chat_app/status/status.dart';
+
 import './chat/chat.dart';
 import "package:flutter/material.dart";
 
@@ -47,8 +50,8 @@ class ChatHome extends StatelessWidget {
                 const FloatingActionButton(onPressed: null, child: Text("+")),
             body: const TabBarView(children: [
               ChatWidget(),
-              Text("chat"),
-              Text("calls"),
+              Status(),
+              Calls(),
             ])));
   }
 }
